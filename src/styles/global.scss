@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #F8F8F8;
+  --white-700: #FEFEFE;
+
+  --red: #E73F5D;
+
+  --black: #29292E;
+  --shadow: #050206;
+
+  --gray-200: #DBDCDD;
+  --gray-500: #A8A8B3;
+  --gray-800: #737380;
+
+  --pink-300: #D67EE2;
+  --pink-500: #E559F9;
+
+  --green-500: #04D361;
+
+  --purple: #835AFD;
+}
+
+body {
+  background: var(--white);
+  color: var(--black);
+}
+
+body, input, button, textarea {
+  font: 400 16px 'Roboto', sans-serif;
+}
