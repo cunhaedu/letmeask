@@ -25,8 +25,6 @@ export function AuthContextProvider({ children }: AuthContextProviderProps) {
   const [user, setUser] = useState<User>();
 
   useEffect(() => {
-    console.log('chegou');
-
     const unsubscribe = auth.onAuthStateChanged(user => {
       if (user) {
         const { displayName, photoURL, uid } = user;

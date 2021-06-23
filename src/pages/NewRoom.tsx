@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
@@ -20,6 +21,7 @@ export function NewRoom() {
     event.preventDefault();
 
     if (newRoom.trim() === '') {
+      toast('Por favor, digite um código para a sala')
       return;
     }
 
@@ -35,6 +37,7 @@ export function NewRoom() {
 
   return (
     <div id="page-auth">
+      <Toaster />
       <aside>
         <img src={illustrationImg} alt="ilustração simbolizando perguntas e respostas" />
         <strong>Crie salas de Q&amp;A ao-vivo</strong>
