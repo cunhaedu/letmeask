@@ -12,28 +12,7 @@ import { Question } from '../components/Question';
 import logoImg from '../assets/images/logo.svg';
 
 import '../styles/room.scss';
-import { useEffect } from 'react';
-
-type FirebaseQuestions = Record<string, {
-  author: {
-    name: string;
-    avatar: string;
-  };
-  content: string;
-  isAnswered: boolean;
-  isHighLighted: boolean;
-}>
-
-type QuestionData = {
-  id: string;
-  author: {
-    name: string;
-    avatar: string;
-  };
-  content: string;
-  isAnswered: boolean;
-  isHighLighted: boolean;
-}
+import { useRoom } from '../hooks/useRoom';
 
 type RoomParams = {
   id: string;
@@ -43,31 +22,11 @@ export function Room() {
   const { user } = useAuth();
   const params = useParams<RoomParams>();
   const [newQuestion, setNewQuestion] = useState('');
-  const [questions, setQuestions] = useState<QuestionData[]>([]);
-  const [title, setTitle] = useState('');
+
   const roomId = params.id;
 
-  useEffect(() => {
-    const roomRef = database.ref(`rooms/${roomId}`);
+  const { questions, title } = useRoom(roomId);
 
-    roomRef.on('value', room => {
-      const databaseRoom = room.val();
-      const firebaseQuestions: FirebaseQuestions = databaseRoom.questions;
-      const parsedQuestions = Object.entries(firebaseQuestions ?? {}).map(([key, value]) => {
-        return {
-          id: key,
-          content: value.content,
-          author: value.author,
-          isHighLighted: value.isHighLighted,
-          isAnswered: value.isAnswered,
-        }
-      });
-
-      setTitle(databaseRoom.title);
-      setQuestions(parsedQuestions);
-
-    })
-  }, [roomId]);
 
   async function handleSendQuestion(event: FormEvent) {
     event.preventDefault();
