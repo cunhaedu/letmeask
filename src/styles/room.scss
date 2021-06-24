@@ -75,6 +75,7 @@
             margin-left: 8px;
             color: var(--black);
             font-size: 14px;
+            font-weight: 500;
           }
         }
 
@@ -99,6 +100,10 @@
           }
         }
       }
+    }
+
+    .question-list {
+      margin-top: 32px;
     }
   }
 }
