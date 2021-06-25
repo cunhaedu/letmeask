@@ -31,14 +31,19 @@ export function Home() {
     event.preventDefault();
 
     if (roomCode.trim() === '') {
-      toast('Por favor, digite um código para a sala')
+      toast('Por favor, digite um código para a sala');
       return;
     }
 
     const roomRef = await database.ref(`rooms/${roomCode}`).get();
 
     if (!roomRef.exists) {
-      toast('Room does not exists.');
+      toast('Sala não existe.');
+      return;
+    }
+
+    if (roomRef.val().endedAt) {
+      toast('Esta sala foi fechada!.');
       return;
     }
 
