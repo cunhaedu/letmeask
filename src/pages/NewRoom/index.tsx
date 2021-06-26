@@ -21,7 +21,13 @@ export function NewRoom() {
     event.preventDefault();
 
     if (newRoom.trim() === '') {
-      toast('Por favor, digite um código para a sala')
+      toast('Por favor, digite um código para a sala', {
+        style: {
+          borderRadius: '10px',
+          background: '#333',
+          color: '#fff',
+        },
+      })
       return;
     }
 
