@@ -3,13 +3,14 @@
   border-radius: 8px;
   overflow: hidden;
 
-  background: #FFF;
-  border: 1px solid var(--purple);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.03);
   cursor: pointer;
   display: flex;
 
   div {
-    background: var(--purple);
+    background: linear-gradient(270deg, #8743FF 0%, #4136F1 100%);
+    box-shadow: 0px 15px 30px rgba(20, 102, 204, 0.16);
     padding: 0 12px;
     display: flex;
     justify-content: center;
@@ -17,11 +18,12 @@
   }
 
   span {
+    color: var(--white-full);
     display: block;
     align-self: center;
     flex: 1;
     padding: 0 16px 0 12px;
-    width: 230px;
+    width: 245px;
     font-size: 14px;
     font-weight: 500;
   }

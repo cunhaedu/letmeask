@@ -4,28 +4,43 @@
   box-sizing: border-box;
 }
 
+// White theme
+// :root {
+//   --white: #F8F8F8;
+//   --white-600: #F4F0FF;
+//   --white-700: #FEFEFE;
+//   --white-full: #FFF;
+
+//   --black: #29292E;
+
+//   --gray-100: #e2e2e2;
+//   --gray-200: #DBDCDD;
+//   --gray-500: #A8A8B3;
+//   --gray-800: #737380;
+
+//   --pink-500: #E559F9;
+
+//   --purple: #835AFD;
+//   --purple-700: #6F4BD8;
+// }
+
+// Dark theme
 :root {
-  --white: #F8F8F8;
+  --white: #0D0D0D;
   --white-600: #F4F0FF;
   --white-700: #FEFEFE;
   --white-full: #FFF;
 
-  --red: #E73F5D;
-
   --black: #29292E;
-  --shadow: #050206;
 
   --gray-100: #e2e2e2;
   --gray-200: #DBDCDD;
   --gray-500: #A8A8B3;
   --gray-800: #737380;
 
-  --pink-300: #D67EE2;
   --pink-500: #E559F9;
 
-  --green-500: #04D361;
-
-  --purple: #835AFD;
+  --purple: #8643FF;
   --purple-700: #6F4BD8;
 }
 

@@ -8,9 +8,8 @@
     margin-top: 8px;
   }
 
-
   &.highlighted {
-    background: var(--white-600);
+    background: rgba(0, 0, 0, 0.04);
     border: 1px solid var(--purple);
 
     footer .user-info span {
@@ -19,11 +18,12 @@
   }
 
   &.answered {
-    background: var(--gray-200);
+    background: rgba(0, 0, 0, 0.15);
   }
 
   p {
-    color: var(--black);
+    color: var(--white-full);
+    margin-bottom: 10px;
   }
 
   footer {
@@ -71,10 +71,10 @@
         }
 
         &.liked {
-          color: var(--purple);
+          color: var(--pink-500);
 
           svg path {
-            stroke: var(--purple);
+            stroke: var(--pink-500);
           }
         }
       }

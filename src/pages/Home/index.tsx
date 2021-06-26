@@ -30,19 +30,39 @@ export function Home() {
     event.preventDefault();
 
     if (roomCode.trim() === '') {
-      toast('Por favor, digite um código para a sala');
+      toast('Por favor, digite um código para a sala', {
+        style: {
+          borderRadius: '10px',
+          background: '#333',
+          color: '#fff',
+        },
+      });
       return;
     }
 
     const roomRef = await database.ref(`rooms/${roomCode}`).get();
 
-    if (!roomRef.exists) {
-      toast('Sala não existe.');
+    console.log(roomRef);
+
+    if (!roomRef.val()) {
+      toast('Sala não existe.', {
+        style: {
+          borderRadius: '10px',
+          background: '#333',
+          color: '#fff',
+        },
+      });
       return;
     }
 
     if (roomRef.val().endedAt) {
-      toast('Esta sala foi fechada!.');
+      toast('Esta sala foi fechada!.', {
+        style: {
+          borderRadius: '10px',
+          background: '#333',
+          color: '#fff',
+        },
+      });
       return;
     }
 
