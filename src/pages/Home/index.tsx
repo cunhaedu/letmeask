@@ -42,8 +42,6 @@ export function Home() {
 
     const roomRef = await database.ref(`rooms/${roomCode}`).get();
 
-    console.log(roomRef);
-
     if (!roomRef.val()) {
       toast('Sala não existe.', {
         style: {
@@ -64,6 +62,10 @@ export function Home() {
         },
       });
       return;
+    }
+
+    if (user && user?.id === roomRef.val().authorId) {
+      history.push(`/admin/rooms/${roomCode}`);
     }
 
     history.push(`/rooms/${roomCode}`);
